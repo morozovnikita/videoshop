@@ -14,7 +14,7 @@ use yii\helpers\Html;
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="<?=Yii::getAlias('@web');?>/images/product-details/1.jpg" alt="" />
+                            <img src="<?=Yii::getAlias('@web');?>/images/photo.jpg" alt="" />
                         </div>
 
                     </div>

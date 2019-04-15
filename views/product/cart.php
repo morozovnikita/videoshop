@@ -21,9 +21,9 @@ use yii\helpers\Html; ?>
             <table class="table table-condensed">
                 <thead>
                 <tr class="cart_menu">
-                    <td class="image">Item</td>
-                    <td class="price">Price</td>
-                    <td class="total">Total</td>
+                    <td class="image">Диск</td>
+                    <td class="price">Цена</td>
+                    <td class="total">Действия</td>
                     <td></td>
                 </tr>
                 </thead>
@@ -59,9 +59,9 @@ use yii\helpers\Html; ?>
             <div class="col-sm-6">
                 <div class="total_area">
                     <ul>
-                        <li>Total <span><?=$total;?></span></li>
+                        <li>Итого <span><?=$total;?></span></li>
                     </ul>
-                    <?=Html::a('Оформить заказ', ['/product/order'], ['class' => 'btn btn-default check_out' , 'type' => 'button']);?>
+                    <?=Html::a('Оформить заказ', ['/order/form'], ['class' => 'btn btn-default check_out' , 'type' => 'button']);?>
                 </div>
             </div>
         </div>

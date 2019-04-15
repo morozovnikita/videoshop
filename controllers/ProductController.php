@@ -13,9 +13,12 @@ class ProductController extends Controller
 {
     public function actionView($id)
     {
+
         $data = Product::getInfoById($id);
 
-
+        if(empty($data)){
+            return $this->renderFile('@app/views/404.html');
+        }
         return $this->render('item',[
             'item' => $data
         ]);
@@ -26,14 +29,18 @@ class ProductController extends Controller
     {
         session_start();
         $_SESSION['products'][$id] = $id;
-       return $this->actionView($id);
+        return $this->redirect('/');
     }
 
     public function actionDelete($id)
     {
         session_start();
-        unset($_SESSION['products'][$id]);
-        return $this->actionCart($id);
+        if($_SESSION['products'][$id] == $id) {
+            unset($_SESSION['products'][$id]);
+            return $this->actionCart($id);
+        } else {
+            return $this->renderFile('@app/views/404.html');
+        }
 
     }
 
@@ -50,11 +57,6 @@ class ProductController extends Controller
         return $this->render('cart',[
             'items' => $itemsInCard
         ]);
-    }
-
-    public function actionOrder()
-    {
-        dd('Страница оформления заказа');
     }
 
 

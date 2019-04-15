@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 
+use yii\helpers\Html;
 use yii\helpers\Url;
 $this->title = 'Main Page';
 ?>
@@ -39,11 +40,12 @@ $this->title = 'Main Page';
 
 
                                     <div class="productinfo text-center">
-                                        <img src="<?=Yii::getAlias('@web');?>/images/home/product1.jpg" alt="" />
+                                        <img src="<?=Yii::getAlias('@web');?>/images//photo.jpg" alt="" />
                                         <h2><?=$product['title'];?></h2>
                                         <p><?=mb_strimwidth($product['description'],0 ,200  ).'...';?></p>
                                         <h5><?="В наличии ".$product['count'];?></h5>
                                         <a href="<?=Url::toRoute(['/product/view','id' => $product['id']],false);?>" class="btn btn-default add-to-cart">Смотреть далее</a>
+                                        <?=Html::a('Добавить в корзину', ['/product/add', 'id' => $product['id']], ['class' => 'btn btn-fefault cart' , 'type' => 'button']);?>
                                     </div>
 
                                 </div>
