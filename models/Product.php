@@ -19,5 +19,11 @@ class Product extends ActiveRecord
         return $this->hasOne('product' , ['id' => 'category_id']);
     }
 
+    public function getInfoById($id)
+    {
+        $categories = Product::find(['id' => $id])->asArray()->one();
+        return $categories;
+    }
+
 
 }
