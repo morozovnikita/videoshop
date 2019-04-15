@@ -17,6 +17,7 @@ class m190415_071450_product extends Migration
             'title' => $this->string(),
             'description' => $this->text(),
             'count' => $this->integer(),
+            'price' => $this->integer(),
             'date' => $this->date(),
             'image' => $this->string(),
             'category_id' => $this->integer(),

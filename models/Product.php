@@ -21,9 +21,14 @@ class Product extends ActiveRecord
 
     public function getInfoById($id)
     {
-        $categories = Product::find(['id' => $id])->asArray()->one();
-        return $categories;
+        $item = Product::find()->where(['id' => $id])->asArray()->one();
+        return $item;
     }
 
+    public function getListItemById($id)
+    {
+        $items = Product::find()->where(['category_id' => $id])->asArray()->all();
+        return $items;
+    }
 
 }

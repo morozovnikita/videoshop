@@ -1,3 +1,8 @@
+<?php
+
+use yii\helpers\Html;
+
+?>
 <section>
     <div class="container">
         <div class="row">
@@ -17,9 +22,10 @@
                         <div class="product-information"><!--/product-information-->
                             <h2><?=$item['title'];?></h2>
                             <span>
-									<a type="button" class="btn btn-fefault cart">
-										Add to cart
-									</a>
+
+
+                                <?=Html::a('Add film', ['/product/add', 'id' => $item['id']], ['class' => 'btn btn-fefault cart' , 'type' => 'button']);?>
+
 								</span>
                             <p><b>Count:</b><?=$item['count'];?></p>
                             <p><b>Description:</b> <br><?=$item['description'];?></p>

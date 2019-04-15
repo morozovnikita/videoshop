@@ -31,10 +31,13 @@ $this->title = 'Main Page';
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Features Items</h2>
+                    <? foreach($items as $product):?>
+                    <div class="single-products">
                     <div class="col-sm-4">
-                        <? foreach($items as $product):?>
                             <div class="product-image-wrapper">
-                                <div class="single-products">
+
+
+
                                     <div class="productinfo text-center">
                                         <img src="<?=Yii::getAlias('@web');?>/images/home/product1.jpg" alt="" />
                                         <h2><?=$product['title'];?></h2>
@@ -42,10 +45,13 @@ $this->title = 'Main Page';
                                         <h5><?="В наличии ".$product['count'];?></h5>
                                         <a href="<?=Url::toRoute(['/product/view','id' => $product['id']],false);?>" class="btn btn-default add-to-cart">Смотреть далее</a>
                                     </div>
+
                                 </div>
+
                             </div>
-                        <? endforeach;?>
+
                     </div>
+                    <? endforeach;?>
 
 
 

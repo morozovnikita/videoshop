@@ -64,7 +64,7 @@ AppAsset::register($this);
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="<?=Url::to('/product/cart');?>">Cart</a></li>
                         </ul>
                     </div>
                 </div>
