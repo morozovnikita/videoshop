@@ -1,8 +1,19 @@
+<?php
+
+$total = 0;
+if(!empty($items)) {
+    foreach ($items as $item) {
+        $total = $total + $item['price'];
+    }
+}
+
+use yii\helpers\Html; ?>
+
 <section id="cart_items">
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="active">Shopping Cart</li>
             </ol>
         </div>
@@ -17,76 +28,43 @@
                 </tr>
                 </thead>
                 <tbody>
-                <? foreach ($items as $item):?>
+                <? if(!empty($items)):foreach ($items as $item):?>
                 <tr>
                     <td class="cart_product">
-                        <a href=""><img src="images/cart/one.png" alt=""></a>
+                        <a href=""><?=$item['title'];?><img src="images/cart/one.png" alt=""></a>
                     </td>
                     <td class="cart_price">
-                        <p>$59</p>
+                        <p><?=$item['price'];?></p>
                     </td>
-                    <td class="cart_total">
-                        <p class="cart_total_price">$59</p>
-                    </td>
-                    <td class="cart_delete">
-                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                    </td>
-                </tr>
-                <? endforeach;?>
 
-                <tr>
-                    <td class="cart_product">
-                        <a href=""><img src="images/cart/two.png" alt=""></a>
-                    </td>
-                    <td class="cart_description">
-                        <h4><a href="">Colorblock Scuba</a></h4>
-                        <p>Web ID: 1089772</p>
-                    </td>
-                    <td class="cart_price">
-                        <p>$59</p>
-                    </td>
-                    <td class="cart_quantity">
-                        <div class="cart_quantity_button">
-                            <a class="cart_quantity_up" href=""> + </a>
-                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                            <a class="cart_quantity_down" href=""> - </a>
-                        </div>
-                    </td>
-                    <td class="cart_total">
-                        <p class="cart_total_price">$59</p>
-                    </td>
                     <td class="cart_delete">
-                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                        <?=Html::a('Удалить товар', ['/product/delete', 'id' => $item['id']], ['class' => 'btn btn-default cart' , 'type' => 'button']);?>
                     </td>
                 </tr>
-                <tr>
-                    <td class="cart_product">
-                        <a href=""><img src="images/cart/three.png" alt=""></a>
-                    </td>
-                    <td class="cart_description">
-                        <h4><a href="">Colorblock Scuba</a></h4>
-                        <p>Web ID: 1089772</p>
-                    </td>
-                    <td class="cart_price">
-                        <p>$59</p>
-                    </td>
-                    <td class="cart_quantity">
-                        <div class="cart_quantity_button">
-                            <a class="cart_quantity_up" href=""> + </a>
-                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                            <a class="cart_quantity_down" href=""> - </a>
-                        </div>
-                    </td>
-                    <td class="cart_total">
-                        <p class="cart_total_price">$59</p>
-                    </td>
-                    <td class="cart_delete">
-                        <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                    </td>
-                </tr>
+                <? endforeach;endif;?>
+
                 </tbody>
             </table>
         </div>
     </div>
 </section> <!--/#cart_items-->
+
+<section id="do_action">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <div class="total_area">
+                    <ul>
+                        <li>Total <span><?=$total;?></span></li>
+                    </ul>
+                    <?=Html::a('Оформить заказ', ['/product/order'], ['class' => 'btn btn-default check_out' , 'type' => 'button']);?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#do_action-->
 

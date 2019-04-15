@@ -13,7 +13,7 @@ $this->title = 'Main Page';
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Category</h2>
+                    <h2>Категории</h2>
                     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                         <? foreach ($data as $item):?>
                         <div class="panel panel-default">
@@ -30,7 +30,7 @@ $this->title = 'Main Page';
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items</h2>
+                    <h2 class="title text-center">Товары</h2>
                     <? foreach($items as $product):?>
                     <div class="single-products">
                     <div class="col-sm-4">

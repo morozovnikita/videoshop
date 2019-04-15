@@ -22,7 +22,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Главная</title>
     <link rel="shortcut icon" href="<?=Yii::getAlias('@web');?>/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?=Yii::getAlias('@web');?>/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?=Yii::getAlias('@web');?>/images/ico/apple-touch-icon-114-precomposed.png">
@@ -36,12 +36,7 @@ AppAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                        </ul>
-                    </div>
+
                 </div>
 
             </div>
@@ -86,8 +81,8 @@ AppAsset::register($this);
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="<?=Url::toRoute('site/contact');?>">Contact</a></li>
+                            <li><a href="index.html" class="active">Главная</a></li>
+                            <li><a href="<?=Url::toRoute('site/contact');?>">Связь с нами</a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,8 +101,8 @@ AppAsset::register($this);
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                <p class="pull-left">Бла Бла Бла Бла Бла Бла </p>
+                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Бла</a></span></p>
             </div>
         </div>
     </div>

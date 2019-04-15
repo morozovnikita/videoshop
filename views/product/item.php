@@ -24,11 +24,11 @@ use yii\helpers\Html;
                             <span>
 
 
-                                <?=Html::a('Add film', ['/product/add', 'id' => $item['id']], ['class' => 'btn btn-fefault cart' , 'type' => 'button']);?>
+                                <?=Html::a('Добавить в корзину', ['/product/add', 'id' => $item['id']], ['class' => 'btn btn-fefault cart' , 'type' => 'button']);?>
 
 								</span>
-                            <p><b>Count:</b><?=$item['count'];?></p>
-                            <p><b>Description:</b> <br><?=$item['description'];?></p>
+                            <p><b>Количество у нас в магазине: </b><?=$item['count'];?></p>
+                            <p><b>Описание:</b> <br><?=$item['description'];?></p>
                         </div><!--/product-information-->
                     </div>
                 </div><!--/product-details-->

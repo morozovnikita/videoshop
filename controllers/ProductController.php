@@ -29,16 +29,33 @@ class ProductController extends Controller
        return $this->actionView($id);
     }
 
+    public function actionDelete($id)
+    {
+        session_start();
+        unset($_SESSION['products'][$id]);
+        return $this->actionCart($id);
+
+    }
+
     public function actionCart()
     {
         session_start();
 
-        foreach ($_SESSION['products'] as $product){
-            $itemsInCard[$product] = Product::getInfoById($product);
+        if(!empty($_SESSION['products'])) {
+            foreach ($_SESSION['products'] as $product) {
+                $itemsInCard[$product] = Product::getInfoById($product);
+            }
         }
 
         return $this->render('cart',[
             'items' => $itemsInCard
         ]);
     }
+
+    public function actionOrder()
+    {
+        dd('Страница оформления заказа');
+    }
+
+
 }
